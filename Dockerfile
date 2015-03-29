@@ -37,4 +37,4 @@ RUN bundle install --without development test
 
 # run
 EXPOSE 80
-CMD bundle exec ruby server.rb -p 80
+CMD bundle exec ruby app.rb -p 80
