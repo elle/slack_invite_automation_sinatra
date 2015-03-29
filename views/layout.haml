@@ -4,6 +4,9 @@
     %title Join #{settings.team_name}
     %meta{content: "text/html; charset=utf-8", "http-equiv" => "content-type"}
 
+    %link{href: "http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700", rel: "stylesheet", type: "text/css"}
     %link{href: "application.css", rel: "stylesheet"}
+
   %body
-    = yield
+    .wrapper
+      = yield

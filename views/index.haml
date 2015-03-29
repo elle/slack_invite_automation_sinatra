@@ -1,12 +1,12 @@
+.header
+  %h1
+    Join to
+    %br
+    = settings.team_name
+  %p.description= settings.team_desc
+
 %form{:action => "/invite", :method => "post", :name => "form for slack invitation request"}
   = Rack::Csrf.tag(env)
-  .header
-    %p
-      Join to
-      %br
-      = settings.team_name
-  .description
-    %p= settings.team_desc
   .input
-    %input#email.button{:name => "email", :placeholder => "name@example.com", :type => "email"}
-    %input#submit.button{:type => "submit", :value => "JOIN"}
+    %input#email{name: "email", placeholder: "name@example.com", type: "email"}
+    %input#submit{:type => "submit", :value => "JOIN"}

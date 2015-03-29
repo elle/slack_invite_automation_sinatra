@@ -1,6 +1,5 @@
-.wrapper
-  %h1
-    An invite request to #{settings.team_name} is #{@result ? 'Success' : 'Failed'}.
-  - if @result
-    %p
-      Please, check your email(#{@email}).
+%h1
+  An invite request to #{settings.team_name} is #{@result ? 'Success' : 'Failed'}.
+- if @result
+  %p
+    Please, check your email(#{@email}).
