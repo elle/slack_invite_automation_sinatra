@@ -1,6 +1,9 @@
 require "bundler"
 Bundler.require
 
+require "dotenv"
+Dotenv.load
+
 use Rack::Deflater
 use Rack::Csrf
 
@@ -11,14 +14,14 @@ set :scss, style: :compact
 set :bind, "0.0.0.0"
 set :session_secret,          ENV["SESSION_SECRET_KEY"]
 set :slack_invite_api_url,    "https://slack.com/api/users.admin.invite"
-set :team_name,               ENV.fetch("SLACK_TEAM_NAME", "Team Name")
-set :team_desc,               ENV.fetch("SLACK_TEAM_DESC", "Your Team description is here.")
+set :team_name,               ENV["TEAM_NAME"]
+set :team_desc,               ENV["TEAM_DESC"]
 
 helpers do
   def invite_request_to_slack
     response = Excon.post(settings.slack_invite_api_url,
                 body: URI.encode_www_form(
-                        token: ENV["SLACK_TOKEN"],
+                        token: ENV["SLACK_API_TOKEN"],
                         email: @email,
                         set_active: true
                       ),

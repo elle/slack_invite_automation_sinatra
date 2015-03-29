@@ -1,11 +1,12 @@
 source "https://rubygems.org"
 
+gem "dotenv"
+gem "excon"
 gem "haml"
+gem "multi_json"
+gem "rack_csrf", require: "rack/csrf"
 gem "sass"
 gem "sinatra"
-gem "excon"
-gem "rack_csrf", require: "rack/csrf"
-gem "multi_json"
 
 group :development do
   gem "foreman"

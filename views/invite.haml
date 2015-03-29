@@ -1,5 +1,5 @@
 %h1
-  An invite request to #{settings.team_name} is #{@result ? 'Success' : 'Failed'}.
+  Your invite request to #{settings.team_name} #{@result ? "was successful" : "has failed"}.
 - if @result
   %p
-    Please, check your email(#{@email}).
+    Please, check your email #{@email} for instructions.
